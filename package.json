@@ -8,10 +8,10 @@
   "repository": "simbo/simbo.github.io_source",
   "main": "src/index.html",
   "scripts": {
-    "analyzer": "BUNDLE_ANALYZER=1 yarn run build:prod",
+    "analyzer": "BUNDLE_ANALYZER=1 yarn run build",
     "build:dev": "webpack --progress",
     "build": "NODE_ENV=production yarn run build:dev",
-    "build:ci": "yarn run build:prod --no-progress --bail",
+    "build:ci": "yarn run build --no-progress --bail",
     "dev": "webpack-dev-server --color",
     "serve:prod": "NODE_ENV=production yarn run serve",
     "test": "echo \"No tests specified. Skipping...\" && exit 0",
