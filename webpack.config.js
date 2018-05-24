@@ -1,6 +1,7 @@
 const autoprefixer = require('autoprefixer');
 const chalk = require('chalk');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const cssMqpacker = require('css-mqpacker');
 const cssnano = require('cssnano');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -203,6 +204,12 @@ const config = {
     new CleanWebpackPlugin(['dist'], {
       watch: true
     }),
+
+    new CopyWebpackPlugin([{
+      from: rootPath('src/public/**/*'),
+      to: rootPath('dist'),
+      context: rootPath('src/public')
+    }]),
 
     new webpack.optimize.OccurrenceOrderPlugin(),
 
