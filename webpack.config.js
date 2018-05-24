@@ -9,7 +9,9 @@ const path = require('path');
 const sortMediaqueries = require('css-mqpacker-sort-mediaqueries');
 const stylus = require('stylus');
 const webpack = require('webpack');
-const { VueLoaderPlugin } = require('vue-loader');
+const {
+  VueLoaderPlugin
+} = require('vue-loader');
 
 const isProductionMode = process.env.NODE_ENV === 'production';
 const mode = isProductionMode ? 'production' : 'development';
@@ -36,7 +38,9 @@ const babelLoader = {
       [
         '@babel/preset-env',
         {
-          targets: { browsers }
+          targets: {
+            browsers
+          }
         }
       ]
     ],
@@ -47,7 +51,9 @@ const babelLoader = {
 const stylusLoader = {
   loader: 'stylus-loader',
   options: {
-    define: { ...globals },
+    define: {
+      ...globals
+    },
     paths: [rootPath('src', 'styles', 'imports')],
     'include css': true,
     'inline-url': stylus.url({
@@ -69,11 +75,11 @@ const postcssLoader = {
       cssMqpacker({
         sort: sortMediaqueries
       }),
-      isProductionMode
-        ? cssnano({
-            zindex: false
-          })
-        : null
+      isProductionMode ?
+      cssnano({
+        zindex: false
+      }) :
+      null
     ].filter(plugin => plugin !== null)
   }
 };
@@ -81,7 +87,9 @@ const postcssLoader = {
 const pugLoader = {
   loader: 'pug-plain-loader',
   options: {
-    data: { ...globals }
+    data: {
+      ...globals
+    }
   }
 };
 
@@ -118,8 +126,7 @@ const config = {
   },
 
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.ts$/,
         exclude: /node_modules/,
         use: [babelLoader, typescriptLoader]
@@ -127,8 +134,7 @@ const config = {
       {
         test: /\.styl(us)?$/,
         exclude: /node_modules/,
-        oneOf: [
-          {
+        oneOf: [{
             resourceQuery: /^\?vue/,
             use: ['vue-style-loader', 'css-loader?sourceMap', postcssLoader, stylusLoader]
           },
@@ -142,8 +148,7 @@ const config = {
       {
         test: /\.pug$/,
         exclude: /node_modules/,
-        oneOf: [
-          {
+        oneOf: [{
             resourceQuery: /^\?vue/,
             use: [pugLoader]
           },
@@ -207,8 +212,8 @@ const config = {
         .createHash('md4')
         .update(
           Array.from(chunk._modules.values())
-            .map(m => path.normalize(m.context, m.request))
-            .join('_')
+          .map(m => path.normalize(m.context, m.request))
+          .join('_')
         )
         .digest('base64')
         .replace(/[^a-z0-9]+/gi, '');
