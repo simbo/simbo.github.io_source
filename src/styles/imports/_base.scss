@@ -1,0 +1,16 @@
+@import 'vars';
+
+html {
+  font-size: 16px;
+
+  @media screen and (min-width: 768px) {
+    font-size: 18px;
+  }
+
+}
+
+body {
+  font-family: map-get($fontFamilies, system);
+  background: #fafbfc;
+  text-rendering: optimizeLegibility;
+}

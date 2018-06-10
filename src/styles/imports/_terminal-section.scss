@@ -1,0 +1,30 @@
+@import './vars';
+
+body {
+  background: map-get($terminalColors, 'black');
+  color: map-get($terminalColors, 'white');
+}
+
+.terminal-section {
+  font-size: 1.2rem;
+  font-family: map-get($fontFamilies, 'systemMono');
+  line-height: (20/14);
+
+  .typed {
+    padding: 1em;
+    width: 25em;
+    max-width: 100%;
+  }
+
+  a {
+    color: map-get($terminalColors, 'blue');
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      text-decoration: underline
+    }
+
+  }
+
+}
