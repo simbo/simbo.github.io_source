@@ -4,19 +4,15 @@ IMG := simbo/node:8.11-alpine
 
 .PHONY: build
 build: check-install ## build for production
-	@${RUN} ${IMG} npm run build
+	@${RUN} ${IMG} npm run build:prod
 
 .PHONY: dev
 dev: check-install ## start webpack dev server
-	${RUN} -p 9000:9000 ${IMG} npm run dev
+	${RUN} -p 9000:9000 ${IMG} npm run serve:dev
 
 .PHONY: serve
 serve: check-install ## start webpack dev server in production mode
-	@${RUN} -p 9000:9000 ${IMG} npm run serve
-
-.PHONY: analyzer
-analyzer: check-install ## start bundle analyzer
-	@${RUN} -p 9001:9001 ${IMG} npm run analyzer
+	@${RUN} -p 9000:9000 ${IMG} npm run serve:prod
 
 .PHONY: test
 test: check-install # run tests
