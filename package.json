@@ -8,17 +8,18 @@
   "repository": "simbo/simbo.github.io_source",
   "main": "src/index.html",
   "scripts": {
-    "analyzer": "BUNDLE_ANALYZER=1 npm run build",
+    "build": "npm run build:prod",
     "build:dev": "webpack --progress",
-    "build": "NODE_ENV=production npm run build:dev",
-    "build:ci": "npm run build -- --no-progress --bail",
-    "dev": "webpack-dev-server --color",
-    "serve:prod": "NODE_ENV=production npm run serve",
+    "build:prod": "NODE_ENV=production npm run build:dev",
+    "build:ci": "npm run build:prod -- --no-progress --bail",
+    "start": "npm run serve:dev",
+    "serve:dev": "webpack-dev-server --color",
+    "serve:prod": "NODE_ENV=production npm run serve:dev",
     "test": "echo \"No tests specified. Skipping...\" && exit 0",
-    "watch": "npm run build:dev -- --watch"
+    "watch": "<%= cmd %> run build:dev<%= sep %> --watch"
   },
   "engines": {
-    "node": ">=8.11.2"
+    "node": ">=8"
   },
   "dependencies": {
     "@simbo/stylus-mixins": "^0.1.0",
@@ -33,6 +34,7 @@
     "@types/node": "^10.1.2",
     "@types/shortid": "^0.0.29",
     "autoprefixer": "^8.5.0",
+    "awesome-typescript-loader": "^5.0.0",
     "babel-loader": "^8.0.0-beta.2",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
@@ -40,21 +42,23 @@
     "css-mqpacker": "^6.0.2",
     "css-mqpacker-sort-mediaqueries": "^0.2.2",
     "cssnano": "^3.10.0",
-    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-webpack-exclude-assets-plugin": "0.0.7",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "node-sass-magic-importer": "^5.1.3",
     "postcss-loader": "^2.1.5",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "raw-loader": "^0.5.1",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "ts-loader": "^4.3.0",
+    "sass-loader": "^7.0.3",
     "ts-node": "^6.0.5",
     "typescript": "^2.8.3",
     "vue-loader": "^15.2.0",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.8.3",
+    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-cli": "^3.0.3",
     "webpack-dev-server": "^3.1.4"
   }

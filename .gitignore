@@ -2,4 +2,5 @@ node_modules
 *.log
 
 /dist
-.make-npm-state
+/.make-npm-state
+/bundle-analyzer-report.*
