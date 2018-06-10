@@ -24,7 +24,10 @@ const sassLoader = {
     outputStyle: 'expanded',
     precision: 8,
     sourceMap: true,
-    importer: magicImporter(magicImporterOptions)
+    importer: magicImporter(magicImporterOptions),
+    includePaths: [
+      paths.src('styles/imports')
+    ]
   }
 };
 

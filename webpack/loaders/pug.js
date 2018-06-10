@@ -14,7 +14,7 @@ const pugLoader = {
       ...globals
     },
     doctype: null,
-    pretty: inDevMode,
+    pretty: false,
     filters: {
     }
   }

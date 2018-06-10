@@ -56,7 +56,7 @@ const config = {
    * Sourcemap Settings
    * https://webpack.js.org/configuration/devtool/
    */
-  devtool: inProdMode ? 'source-map' : 'inline-cheap-module-source-map',
+  devtool: inProdMode ? 'none' : 'inline-cheap-module-source-map',
 
 
   /**

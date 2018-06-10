@@ -3,10 +3,10 @@ const { paths } = require('./../paths');
 
 /**
  * Typescript Loader
- * https://github.com/s-panferov/awesome-typescript-loader
+ * https://github.com/TypeStrong/ts-loader
  */
 const typescriptLoader = {
-  loader: 'awesome-typescript-loader',
+  loader: 'ts-loader',
   options: {
     appendTsSuffixTo: [/\.vue$/]
   }
