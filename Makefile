@@ -36,8 +36,8 @@ install: # install node_modules
 
 .PHONY: check-install
 check-install: # install if node_modules doesn't exist or lockfile changed
-	@if [ ! -d "node_modules" ] || ! cmp -s npm.lock .make-npm-state; then\
-		$(MAKE) install && cp -pf npm.lock .make-npm-state;\
+	@if [ ! -d "node_modules" ] || ! cmp -s package-lock.json .make-npm-state; then\
+		$(MAKE) install && cp -pf package-lock.json .make-npm-state;\
 	fi
 
 .DEFAULT_GOAL :=
