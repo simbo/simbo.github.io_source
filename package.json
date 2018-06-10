@@ -8,15 +8,15 @@
   "repository": "simbo/simbo.github.io_source",
   "main": "src/index.html",
   "scripts": {
-    "build": "npm run build:prod",
+    "build": "npm run build:prod --",
     "build:dev": "webpack --progress",
-    "build:prod": "NODE_ENV=production npm run build:dev",
+    "build:prod": "NODE_ENV=production npm run build:dev --",
     "build:ci": "npm run build:prod -- --no-progress --bail",
     "start": "npm run serve:dev",
     "serve:dev": "webpack-dev-server --color",
-    "serve:prod": "NODE_ENV=production npm run serve:dev",
+    "serve:prod": "NODE_ENV=production npm run serve:dev --",
     "test": "echo \"No tests specified. Skipping...\" && exit 0",
-    "watch": "<%= cmd %> run build:dev<%= sep %> --watch"
+    "watch": "npm run build:dev -- --watch"
   },
   "engines": {
     "node": ">=8"
