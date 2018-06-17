@@ -61,7 +61,8 @@ plugins.push(
  */
 plugins.push(
   new HtmlWebpackPlugin({
-    template: 'src/index.pug',
+    filename: 'index.html',
+    template: 'src/content/home/index.pug',
     excludeAssets: [
     ]
   }),
