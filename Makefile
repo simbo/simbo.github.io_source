@@ -4,23 +4,23 @@ IMG := simbo/node:8.11-alpine
 
 .PHONY: build
 build: check-install ## build for production
-	@${RUN} ${IMG} npm run build:prod
+	@${RUN} ${IMG} yarn run build:prod
 
 .PHONY: dev
 dev: check-install ## start webpack dev server
-	${RUN} -p 9000:9000 ${IMG} npm run serve:dev
+	${RUN} -p 9000:9000 ${IMG} yarn run serve:dev
 
 .PHONY: serve
 serve: check-install ## start webpack dev server in production mode
-	@${RUN} -p 9000:9000 ${IMG} npm run serve:prod
+	@${RUN} -p 9000:9000 ${IMG} yarn run serve:prod
 
 .PHONY: test
 test: check-install # run tests
-	@${RUN} ${IMG} npm run test
+	@${RUN} ${IMG} yarn run test
 
 .PHONY: build-ci
 build-ci: check-install # build for production optimized for ci env
-	@${RUN} ${IMG} npm run build:ci
+	@${RUN} ${IMG} yarn run build:ci
 
 .PHONY: shell
 shell: ## open a node container shell
@@ -28,12 +28,12 @@ shell: ## open a node container shell
 
 .PHONY: install
 install: # install node_modules
-	@${RUN} ${IMG} npm install
+	@${RUN} ${IMG} yarn install
 
 .PHONY: check-install
 check-install: # install if node_modules doesn't exist or lockfile changed
-	@if [ ! -d "node_modules" ] || ! cmp -s package-lock.json .make-npm-state; then\
-		$(MAKE) install && cp -pf package-lock.json .make-npm-state;\
+	@if [ ! -d "node_modules" ] || ! cmp -s yarn.lock .make-yarn-state; then\
+		$(MAKE) install && cp -pf yarn.lock .make-yarn-state;\
 	fi
 
 .DEFAULT_GOAL :=

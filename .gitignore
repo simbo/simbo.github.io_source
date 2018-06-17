@@ -2,5 +2,5 @@ node_modules
 *.log
 
 /dist
-/.make-npm-state
+/.make-yarn-state
 /bundle-analyzer-report.*

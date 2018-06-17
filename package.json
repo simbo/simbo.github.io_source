@@ -8,15 +8,15 @@
   "repository": "simbo/simbo.github.io_source",
   "main": "src/index.html",
   "scripts": {
-    "build": "npm run build:prod --",
+    "build": "yarn run build:prod",
     "build:dev": "webpack --progress",
-    "build:prod": "NODE_ENV=production npm run build:dev --",
-    "build:ci": "npm run build:prod -- --no-progress --bail",
-    "start": "npm run serve:dev",
+    "build:prod": "NODE_ENV=production yarn run build:dev",
+    "build:ci": "yarn run build:prod --no-progress --bail",
+    "start": "yarn run serve:dev",
     "serve:dev": "webpack-dev-server --color",
-    "serve:prod": "NODE_ENV=production npm run serve:dev --",
+    "serve:prod": "NODE_ENV=production yarn run serve:dev",
     "test": "echo \"No tests specified. Skipping...\" && exit 0",
-    "watch": "npm run build:dev -- --watch"
+    "watch": "yarn run build:dev --watch"
   },
   "engines": {
     "node": ">=8"
@@ -25,14 +25,14 @@
     "@simbo/stylus-mixins": "^0.1.0",
     "css-reset-and-normalize": "^1.0.1",
     "shortid": "^2.2.8",
-    "typed.js": "^2.0.7",
+    "typed.js": "^2.0.8",
     "vue": "^2.5.16"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
-    "@babel/preset-env": "^7.0.0-beta.49",
-    "@babel/runtime": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/runtime": "^7.0.0-beta.51",
     "@types/node": "^8.10.19",
     "@types/shortid": "^0.0.29",
     "@types/typed.js": "^2.0.0",
@@ -55,13 +55,13 @@
     "raw-loader": "^0.5.1",
     "sass-loader": "^7.0.3",
     "ts-loader": "^4.4.1",
-    "typescript": "^2.9.1",
+    "typescript": "^2.9.2",
     "vue-loader": "^15.2.4",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^4.12.0",
     "webpack-bundle-analyzer": "^2.13.1",
-    "webpack-cli": "^3.0.3",
+    "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.1.4"
   }
 }
