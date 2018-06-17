@@ -1,0 +1,30 @@
+mixin svgSymbol(name, width = 512, height = null)
+  if (height === null)
+    - var height = width
+  symbol(
+    v-if = `name == '${name}'`,
+    id = `svg-symbol__${name}`,
+    viewBox = `0 0 ${width} ${height}`
+  )
+    block
+
+.svg-icon
+
+  svg(
+    viewBox = "0 0 512 512",
+    xmlns = "http://www.w3.org/2000/svg"
+  )
+
+    use(
+      :xlink:href = "symbolLink",
+      :filter="filterUrl"
+    )
+
+    include filters/grayscale
+
+    include icons/unicorn
+    include icons/paper-plane
+    include icons/octocat
+    include icons/secure
+    include icons/twitter
+    include icons/npm
