@@ -1,0 +1,122 @@
+@import 'vars';
+@import 'functions/*';
+@import 'mixins/*';
+
+$sidebar: (
+  'transition': (
+    'duration': .4s,
+    'easing': ease
+  )
+);
+
+.sidebar {
+  display: flex;
+  justify-content: space-between;
+  background: _($colors, 'porcelain');
+
+  &__toggle {
+    flex: 0 0 auto;
+    position: relative;
+    background: _($colors, 'emperor');
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: opacity _($sidebar, 'transition', 'easing') _($sidebar, 'transition', 'duration');
+
+      .sidebar.is-visible & {
+        opacity: 0;
+      }
+
+    }
+
+  }
+
+  &__content {
+    @include momentum-scrolling();
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+
+  @include mq('mobile') {
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: calc(100vh - 3.5rem);
+    transition: transform _($sidebar, 'transition', 'easing') _($sidebar, 'transition', 'duration');
+
+    &__toggle {
+      height: 2px;
+      width: 100%;
+      cursor: row-resize;
+      transition: height _($sidebar, 'transition', 'easing') _($sidebar, 'transition', 'duration');
+
+      &::before {
+        width: calc(100% - 4rem);
+        height: 8px;
+        border-top: 2px dotted _($colors, 'rollingStone');
+        border-bottom: 2px dotted _($colors, 'rollingStone');
+      }
+
+    }
+
+    &.is-visible {
+      transform: translateY(0);
+    }
+
+    &,
+    &.is-hidden {
+      transform: translateY(calc(100% - 32px));
+    }
+
+    &.is-hidden &__toggle {
+      height: 32px;
+    }
+
+  }
+
+  @include mq('>=tablet') {
+    flex: 0 0 auto;
+    flex-direction: row-reverse;
+    width: 16rem;
+    transition: margin-left _($sidebar, 'transition', 'easing') .2s;
+
+    &__toggle {
+      height: 100%;
+      width: 2px;
+      cursor: col-resize;
+      transition: width _($sidebar, 'transition', 'easing') .2s;
+
+      &::before {
+        width: 7px;
+        height: calc(100% - 4rem);
+        border-left: 2px dotted _($colors, 'rollingStone');
+        border-right: 2px dotted _($colors, 'rollingStone');
+      }
+
+    }
+
+    &.is-visible {
+      margin-left: 0;
+    }
+
+    &,
+    &.is-hidden {
+      margin-left: calc(-16rem + 24px);
+    }
+
+    &.is-hidden &__toggle {
+      width: 24px;
+    }
+
+  }
+
+}
