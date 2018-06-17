@@ -8,7 +8,7 @@ env:
 
 install: yarn
 
-script: yarn run build
+script: yarn run build:ci
 
 deploy:
   provider: pages
