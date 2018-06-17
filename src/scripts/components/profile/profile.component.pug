@@ -1,0 +1,58 @@
+.profile
+
+  .profile__section
+
+    img.profile__avatar(
+      src = "/assets/images/simbo-avatar.png",
+      alt = "Simon Lepel"
+    )
+
+    p.profile__nickname simbo
+
+    h1.profile__name Simon Lepel
+
+    p.profile__bio.
+      Nerd, developer & web enthusiast. Got lost in Berlin. Spending too much
+      time in front of screens…
+
+  .profile__section
+
+    .profile__headline Connect
+
+    ul
+
+      li
+        profile-link(
+          url = "mailto:simbo@simbo.de",
+          label = "simbo@simbo.de",
+          icon = "paper-plane"
+        )
+
+      li
+        profile-link(
+          url = "/files/simbo-pubkey.asc",
+          label = "GPG Key 7AAD1A8E",
+          icon = "secure",
+          description = "Fingerprint 80A9 F0A9 2D6D BA74 1D3B 9CBF D113 1CED 7AAD 1A8E"
+        )
+
+      li
+        profile-link(
+          url = "https://twitter.com/simbo23",
+          label = "simbo23 @ Twitter",
+          icon = "twitter"
+        )
+
+      li
+        profile-link(
+          url = "https://github.com/simbo",
+          label = "simbo @ GitHub",
+          icon = "octocat"
+        )
+
+      li
+        profile-link(
+          url = "https://www.npmjs.com/~simbo",
+          label = "simbo @ npm",
+          icon = "npm"
+        )

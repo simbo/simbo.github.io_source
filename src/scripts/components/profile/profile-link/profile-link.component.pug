@@ -1,0 +1,13 @@
+a.profile-link(
+  :href = "url",
+  @mouseenter = "isHover = true",
+  @mouseleave = "isHover = false",
+  :class = "{'is-hovered': isHover}"
+)
+  .profile-link__icon
+    svg-icon(
+      :name = "icon",
+      :filter = "isHover ? null : 'grayscale'"
+    )
+  | {{ label }}
+  small.profile-link__description(v-if = "description") {{ description }}

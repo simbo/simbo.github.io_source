@@ -1,0 +1,51 @@
+@import 'functions/*';
+@import 'mixins/*';
+@import 'vars';
+@import './../profile.component.vars';
+
+
+.profile-link {
+  display: block;
+  position: relative;
+  margin: 0 -1rem;
+  padding: _($profile, 'link', 'padding')
+    _($profile, 'padding', 'x')
+    _($profile, 'link', 'padding')
+    (
+      _($profile, 'padding', 'x') +
+      _($profile, 'link', 'icon', 'size') +
+      _($profile, 'link', 'indent') +
+      _($profile, 'link', 'padding')
+    );
+  text-decoration: none;
+  color: currentColor;
+  font-size: .75rem;
+
+  &.is-hovered,
+  &:focus {
+    background: _($colors, 'iron');
+    color: _($colors, 'shark');
+    text-shadow: none;
+  }
+
+  &__icon {
+    position: absolute;
+    display: block;
+    top: (_($profile, 'link', 'icon', 'offset') + (_($profile, 'link', 'icon', 'size') / 2));
+    left: (_($profile, 'padding', 'x') + _($profile, 'link', 'indent'));
+    width: _($profile, 'link', 'icon', 'size');
+    transform: translateY(-50%);
+    transition: transform ease .2s;
+  }
+
+  &.is-hovered &__icon {
+    transform: translateY(-50%) scale(1.25);
+  }
+
+  &__description {
+    display: block;
+    font-size: .625rem;
+    opacity: .65;
+  }
+
+}
