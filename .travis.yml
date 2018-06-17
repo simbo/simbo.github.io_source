@@ -1,9 +1,6 @@
-sudo: required
-
-services:
-- docker
-
-language: generic
+language: node_js
+node_js:
+- '8'
 
 fail_fast: true
 
@@ -11,8 +8,12 @@ env:
   global:
     secure: tjlw4gMkkHictEPTBF4mlAvXqgtPX5LMJvjN1n+Er/qiYqdcL9FibULAP4v4+oLqA4DC4JSDNuKBOBH6uHlkJtDp8SxBi7M1wp510e96p2LCMFPNIYuGpT9OO/4jlB7nO0X7AKZvHL6l1u8RlwFtytEbKEC9cxdPI23ZRP4HAtCrtOZBe6oZXAkdn6FKKKKzv2ZzuFAKgu6/NjkPO6PCrTOEu9zcnFhYOYI8fsOppU1SQL3t2tT4XtS5FqlAnhfNRCoHt5NDgYL/sNWsxyaOy4dPDo/l2+BWxX6VhA8ObuQMK8OgG28/QHBK5ZIfdP/dPUsN87W27nax2WeRYKVtK0SiWdpBUmPH0UABpEmUrp++zFnQiCwOZRcI6AazGBco/Kn6DlZS1xo/ujUAXX7E482KuH+Wi5B6CaPqefa0cPfHzpWbLuHkGTR/jxV8uEuM9+G5MtZmUXsDmXxgvp3v/vFf8WZsg88gCKt1ZXJxbiXEbVXCtIqhfHOO5kfhRLYAZcan8Jh7RQLeBwdXDj/sU7hbE5pj1yB2anF6ftRJgk6wqUG3Y9hSVlskDuG04B7MLgUD4afMy71+0+Wb1Vbm6D00xNACuMNF1Orvy8FLgQ8Khfzy9MwQUxqg1OYpw8NSgXSyGgKBUwgJc2Tpk8IrPBAunodvn7RKlfvOLg+BcuM=
 
-script:
-- make build-ci
+cache:
+  yarn: true
+
+install: yarn
+
+script: yarn run build
 
 deploy:
   provider: pages
