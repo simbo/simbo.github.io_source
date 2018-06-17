@@ -1,0 +1,13 @@
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+    @if type-of($map) == 'null' {
+       @return $map;
+    }
+  }
+  @return $map;
+}
+
+@function _($map, $keys...) {
+  @return map-deep-get($map, $keys...);
+}
