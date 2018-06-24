@@ -14,3 +14,7 @@ html(lang="en")
           | Document
   body
     block body
+
+    if (process.env.NODE_ENV == 'production')
+      script
+        include:uglify-js matomo-code.js
