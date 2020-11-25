@@ -11,12 +11,13 @@ install: yarn
 script: yarn run build:ci
 
 deploy:
+  strategy: git
   provider: pages
   on:
     branch: master
-  github-token: "$GITHUB_TOKEN"
-  local-dir: dist
+  token: "$GITHUB_TOKEN"
+  local_dir: dist
   repo: simbo/simbo.github.io
-  target-branch: master
-  skip-cleanup: true
-  keep-history: true
+  target_branch: master
+  cleanup: false
+  keep_history: true
