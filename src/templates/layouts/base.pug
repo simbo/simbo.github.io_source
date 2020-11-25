@@ -12,9 +12,7 @@ html(lang="en")
       title
         block title
           | Document
+      if (process.env.NODE_ENV == 'production')
+        script(async, defer, data-website-id="dc9bc9e9-563f-451b-82b9-2fe74412aa78", src="https://trk.simbo.de/umami.js")
   body
     block body
-
-    if (process.env.NODE_ENV == 'production')
-      script
-        include:uglify-js matomo-code.js
