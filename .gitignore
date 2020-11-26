@@ -3,3 +3,7 @@ node_modules
 
 /dist
 /bundle-analyzer-report.*
+/.cache
+
+/.vscode/*
+!/.vscode/settings.json

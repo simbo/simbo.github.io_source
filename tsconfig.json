@@ -7,18 +7,9 @@
     "experimentalDecorators": true,
     "sourceMap": true,
     "removeComments": true,
-    "lib": [
-      "dom",
-      "es2017"
-    ],
-    "typeRoots": [
-      "node_modules/@types"
-    ]
+    "lib": ["dom", "esnext"],
+    "typeRoots": ["node_modules/@types"]
   },
-  "include": [
-    "src/scripts/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/scripts/**/*.ts"],
+  "exclude": ["node_modules"]
 }

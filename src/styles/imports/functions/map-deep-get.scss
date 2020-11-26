@@ -2,7 +2,7 @@
   @each $key in $keys {
     $map: map-get($map, $key);
     @if type-of($map) == 'null' {
-       @return $map;
+      @return $map;
     }
   }
   @return $map;

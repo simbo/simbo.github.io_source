@@ -10,11 +10,9 @@ Object.entries(components).forEach(([componentName, component]) => {
 });
 
 new Vue({
-
   el: '.view',
 
   methods: {
-
     onClickView(ev) {
       if (document.documentElement.offsetWidth < 768) {
         messageBus.$emit('request:sidebar:hide');
@@ -28,7 +26,5 @@ new Vue({
         messageBus.$emit('request:sidebar:toggle');
       }
     }
-
   }
-
 });
