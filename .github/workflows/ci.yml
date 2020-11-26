@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: 🛎  Checkout
@@ -36,7 +36,7 @@ jobs:
       - name: 🚚  Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          SSH: true
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_GITHUB_REPOS }}
           REPOSITORY_NAME: simbo/simbo.github.io
           BRANCH: master
           FOLDER: dist
