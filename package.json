@@ -1,8 +1,8 @@
 {
   "name": "simbo.github.io_source",
-  "version": "2.0.0",
-  "description": "my personal github pages",
-  "author": "Simon Lepel <simbo@simbo.de> (http://simbo.de)",
+  "version": "2.1.0",
+  "description": "My personal GitHub pages.",
+  "author": "Simon Lepel <simbo@simbo.de> (https://simbo.de/)",
   "license": "MIT",
   "private": true,
   "repository": "github:simbo/simbo.github.io_source",
