@@ -32,6 +32,8 @@ export default Vue.extend({
     getContentStrings(): string[] {
       const pauseStep = 250;
       const content = (this.$refs.content as HTMLElement).innerHTML
+        // replace wrapping PRE
+        .replace(/^<pre>|<\/pre>$/gi, '')
         // remove all linebreak chars
         .replace(/[\r\n]+/g, '')
         // replace pause <span>s with typed.js pause codes
