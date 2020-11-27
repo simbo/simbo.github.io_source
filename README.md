@@ -23,10 +23,14 @@ This project uses...
 ## Usage
 
 ```sh
-# development
+# for development (build, serve and watch)
 yarn start
-#production
+
+# for production build
 yarn build
+
+# to serve the production build for testing
+yarn serve
 ```
 
 ## Deployment

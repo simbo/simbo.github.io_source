@@ -10,6 +10,7 @@
   "scripts": {
     "build": "parcel build src/*.pug",
     "start": "parcel src/*.pug",
+    "serve": "yarn build && webserver 1234 dist",
     "test": "echo \"No tests specified. Skipping...\" && exit 0"
   },
   "engines": {
@@ -50,6 +51,7 @@
     "sass": "^1.29.0",
     "typescript": "^4.1.2",
     "vue-hot-reload-api": "^2.3.4",
-    "vue-template-compiler": "^2.6.12"
+    "vue-template-compiler": "^2.6.12",
+    "webserver": "^4.0.2"
   }
 }
