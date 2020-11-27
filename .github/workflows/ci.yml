@@ -33,10 +33,15 @@ jobs:
       - name: 👷‍♂️  Build
         run: yarn build
 
+      - name: 🔑  Prepare SSH Client
+        uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: 🚚  Deploy
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN_GITHUB_REPOS }}
+          SSH: true
           REPOSITORY_NAME: simbo/simbo.github.io
           BRANCH: master
           FOLDER: dist
