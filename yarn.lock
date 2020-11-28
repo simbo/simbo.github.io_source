@@ -1856,10 +1856,10 @@ css-mqpacker@^7.0.0:
     minimist "^1.2.0"
     postcss "^7.0.0"
 
-css-reset-and-normalize@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/css-reset-and-normalize/-/css-reset-and-normalize-2.1.0.tgz#c65b643079191161a2d0b719b0b072ed86c4eec6"
-  integrity sha512-oa+LI5tKye7Uf+AV8GhM+3bRN9SvZzThupr9SXuPRYKKPho+Qy2BWW5jRGc9qIOWhJvCT/oiw9P5IL+4ma8dfw==
+css-reset-and-normalize@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/css-reset-and-normalize/-/css-reset-and-normalize-2.3.2.tgz#7dbeb9afb4219b108cfeecb12b47e9aad43fbb86"
+  integrity sha512-fQ8inojwTmNMTICsU3+5v6uuJ5CR7qMozhv6IyUdmcMRQAYwaPePOFLkMXMTwvCLE1etrjpmiubhkC2t2VNJrw==
 
 css-select-base-adapter@^0.1.1:
   version "0.1.1"
