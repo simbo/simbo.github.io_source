@@ -1,4 +1,4 @@
-<script lang="ts" src="./profile.component.ts">
+<script lang="ts">
 import Vue from 'vue';
 import ProfileLinkComponent from './profile-link/profile-link.component.vue';
 
@@ -13,7 +13,7 @@ export default Vue.extend({
 });
 </script>
 
-<template lang="pug" src="./profile.component.pug">
+<template lang="pug">
 .profile
 
   .profile__section
@@ -60,7 +60,7 @@ export default Vue.extend({
         )
 </template>
 
-<style lang="scss" src="./profile.component.scss">
+<style lang="scss">
 @import './profile.component.vars';
 
 .profile {

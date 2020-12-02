@@ -1,4 +1,4 @@
-<script lang="ts" src="./sidebar.component.ts">
+<script lang="ts">
 import Vue from 'vue';
 import { messageBus } from '../modules/message-bus';
 
@@ -31,7 +31,7 @@ export default Vue.extend({
 });
 </script>
 
-<template lang="pug" src="./sidebar.component.pug">
+<template lang="pug">
 .sidebar(:class="{'is-visible': visible, 'is-hidden': !visible}")
   .sidebar__toggle(@click.prevent.stop="toggle()")
   .sidebar__content(@click.stop="")
@@ -40,7 +40,7 @@ export default Vue.extend({
   a.sidebar__version(href="https://github.com/simbo/simbo.github.io_source", title="Sources on GitHub")=`v${VERSION}`
 </template>
 
-<style lang="scss" src="./sidebar.component.scss">
+<style lang="scss">
 $sidebar-transition: ease 0.4s;
 $sidebar-transition--fast: ease 0.2s;
 

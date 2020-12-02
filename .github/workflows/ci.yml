@@ -24,10 +24,10 @@ jobs:
       - name: 📦  Install
         run: yarn install
 
-      # - name: 🕵️‍♂️  Lint
+      # - name: 🕵️  Lint
       #   run: yarn lint
 
-      # - name: 👨‍🔬  Test
+      # - name: 🧪  Test
       #   run: yarn test
 
       - name: 👷‍♂️  Build

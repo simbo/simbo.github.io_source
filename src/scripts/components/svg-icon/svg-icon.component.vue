@@ -1,4 +1,4 @@
-<script lang="ts" src="./svg-icon.component.ts">
+<script lang="ts">
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -24,7 +24,7 @@ export default Vue.extend({
 });
 </script>
 
-<template lang="pug" src="./svg-icon.component.pug">
+<template lang="pug">
 mixin svgSymbol(name, width=512, height=null)
   if (height === null)
     - var height = width
@@ -47,7 +47,7 @@ mixin svgSymbol(name, width=512, height=null)
     include icons/npm
 </template>
 
-<style lang="scss" src="./svg-icon.component.scss">
+<style lang="scss">
 .svg-icon {
   position: relative;
   width: 100%;

@@ -1,5 +1,3 @@
-import '../styles/home.scss';
-
 import Vue from 'vue';
 
 import { components } from './components/index';

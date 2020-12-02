@@ -46,7 +46,7 @@ export default Vue.extend({
 });
 </script>
 
-<template lang="pug" src="./typed.component.pug">
+<template lang="pug">
 .typed
   .typed__viewport(:id="viewportId")
   .typed__content(ref="content")
