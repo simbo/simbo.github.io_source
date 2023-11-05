@@ -46,6 +46,5 @@ jobs:
         with:
           SSH: true
           REPOSITORY_NAME: simbo/simbo.github.io
-          BRANCH: master
+          BRANCH: gh-pages
           FOLDER: dist
-          CLEAN: true
