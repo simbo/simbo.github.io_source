@@ -6,5 +6,5 @@
     "./src/styles/imports",
     "node_modules"
   ],
-  "data": "@import 'global-imports';"
+  "data": "@use 'sass:math'; @import 'global-imports';"
 }

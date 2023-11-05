@@ -22,7 +22,9 @@ jobs:
           node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
       - name: 📦  Install
-        run: yarn install
+        run: |
+          yarn install --frozen-lockfile
+          npx --yes browserslist@latest --update-db
 
       # - name: 🕵️  Lint
       #   run: yarn lint
@@ -31,7 +33,8 @@ jobs:
       #   run: yarn test
 
       - name: 👷‍♂️  Build
-        run: yarn build
+        run: |
+          yarn run build
 
       - name: 🔑  Prepare SSH Client
         uses: webfactory/ssh-agent@v0.4.1

@@ -27,7 +27,7 @@ body {
   color: _($terminalColors, 'white');
   font-size: 1.2rem;
   font-family: _($fontFamilies, 'systemMono');
-  line-height: (20/14);
+  line-height: math.div(20, 14);
   @include momentum-scrolling();
 
   @include mq('>=tablet') {

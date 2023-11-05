@@ -71,7 +71,7 @@ a.profile-link(
   &__icon {
     position: absolute;
     display: block;
-    top: (_($profile, 'link', 'icon', 'offset') + (_($profile, 'link', 'icon', 'size') / 2));
+    top: (_($profile, 'link', 'icon', 'offset') + (math.div(_($profile, 'link', 'icon', 'size'), 2)));
     left: (_($profile, 'padding', 'x') + _($profile, 'link', 'indent'));
     width: _($profile, 'link', 'icon', 'size');
     transform: translateY(-50%);
